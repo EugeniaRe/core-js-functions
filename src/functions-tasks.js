@@ -191,7 +191,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return function (...args2) {
+  return function func(...args2) {
     const args = args1.concat(args2);
     return fn(...args);
   };
@@ -216,7 +216,7 @@ function partialUsingArguments(fn, ...args1) {
  */
 function getIdGeneratorFunction(startFrom) {
   let count = startFrom - 1;
-  return function () {
+  return function func() {
     count += 1;
     return count;
   };
